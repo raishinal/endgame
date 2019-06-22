@@ -1,0 +1,47 @@
+{% load static %}
+    
+	<!-- Newsletter section -->
+	<section class="newsletter-section">
+		<div class="container">
+			<h2>Subscribe to our newsletter</h2>
+			<form class="newsletter-form">
+                <input type="text" placeholder="ENTER YOUR E-MAIL">
+
+				<button class="site-btn">subscribe  <img src="{% static 'img/icons/double-arrow.png' %}" alt="#"/></button>
+            </form>
+            <br>
+		</div>
+	</section>
+	<!-- Newsletter section end -->
+
+
+    <!-- Footer section -->
+	<footer class="footer-section">
+        <div class="container">
+            <div class="footer-left-pic">
+                <img src="{% static 'img/footer-left-pic.png' %}" alt="">
+            </div>
+            <div class="footer-right-pic">
+                <img src="{% static 'img/footer-right-pic.png' %}" alt="">
+            </div>
+            <a href="{% url 'index' %}" class="footer-logo">
+                <img src="{% static 'img/logo.png' %}" alt="">
+            </a>
+            <ul class="main-menu footer-menu">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="">Games</a></li>
+                <li><a href="">Reviews</a></li>
+                <li><a href="">News</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+            <div class="footer-social d-flex justify-content-center">
+                <a href="#"><i class="fa fa-pinterest"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-dribbble"></i></a>
+                <a href="#"><i class="fa fa-behance"></i></a>
+            </div>
+            <div class="copyright"><a href="">EndGame</a> 2019 @ All rights reserved</div>
+        </div>
+    </footer>
+    <!-- Footer section end -->
