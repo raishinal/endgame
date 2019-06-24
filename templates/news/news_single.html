@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}| News_single{% endblock %}
+
+{% block content %}
+<!-- Page top section -->
+<section class="page-top-section set-bg" data-setbg="{% static 'img/page-top-bg/1.jpg' %}">
+    <div class="page-info">
+        <h2>News</h2>
+        <div class="site-breadcrumb">
+            <a href="{% url 'index'%}">Home</a>  /
+            <a href="{% url 'news'%}"><span>News</span></a> 
+        </div>
+    </div>
+</section>
+<!-- Page top end-->
+
+
+<!-- Games section -->
+<section class="games-single-page">
+    <div class="container">
+        
+
+        <div class="row">
+            <div class="col-xl-9 col-lg-8 col-md-7 game-single-content">
+                <h2 class="gs-title">{{ news.title }}</h2>
+                
+                <div class="gs-meta">Posted date:<a> {{ news.news_date| naturalday }}</a></div>
+                <div class="game-single-preview">
+                    <a href="{{ news.image.url }}" data-lightbox="image-1"><img src="{{news.image.url}}" alt=""></a> 
+                </div>
+                <br>
+                <h4>Description</h4>
+                <p>{{ news.description }}</p>
+
+                <div class="geme-social-share pt-5 d-flex">
+                    <p>Share:</p>
+                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                    <a href="#"><i class="fa fa-behance"></i></a>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!-- Games end-->
+
+<section class="game-author-section">
+    <div class="container">
+        <div class="game-author-pic set-bg" data-setbg="img/author.jpg"></div>
+        <div class="game-author-info">
+            <h4>Written by: Michael Williams</h4>
+            <p>Vivamus volutpat nibh ac sollicitudin imperdiet. Donec scelerisque lorem sodales odio ultricies, nec rhoncus ex lobortis. Vivamus tincid-unt sit amet sem id varius. Donec elementum aliquet tortor. Curabitur justo mi, efficitur sed eros alique.</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

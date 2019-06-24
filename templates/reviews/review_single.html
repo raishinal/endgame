@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}| Review_single{% endblock %}
+
+{% block content %}
+<!-- Page top section -->
+<section class="page-top-section set-bg" data-setbg="{% static 'img/page-top-bg/1.jpg' %}">
+    <div class="page-info">
+        <h2>Review</h2>
+        <div class="site-breadcrumb">
+            <a href="{% url 'index'%}">Home</a>  /
+            <a href="{% url 'reviews'%}"><span>Review</span></a> 
+        </div>
+    </div>
+
+</section>
+<!-- Page top end-->
+
+
+<!-- Games section -->
+<section class="games-single-page">
+    <div class="container">
+        
+
+       
+            <div class="game-single-preview">
+                    <a href="{{ review.image.url }}" data-lightbox="image-1"><img src="{{review.image.url}}" alt=""></a> 
+                </div>
+                <div class="row"> 
+            <div class="col-xl-9 col-lg-8 col-md-7 game-single-content">
+                <h2 class="gs-title">{{ review.title }}</h2>
+                
+                <div class="gs-meta">Posted date:<a> {{ review.date| naturalday }}</a></div>
+                
+                <br>
+                <h4>Description</h4>
+                <p>{{ review.detail }}</p>
+                
+                
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-5 sidebar game-page-sideber">
+                <div id="stickySidebar">
+                    <div class="widget-item">
+                        <div class="rating-widget">
+                            <h4 class="widget-title">Ratings</h4>
+                            <ul>
+                                <li>Price<span>{{ review.price }}/5</span></li>
+                                <li>Graphics<span>{{ review.graphics }}/5</span></li>
+                                <li>Levels<span>{{ review.levels }}/5</span></li>
+                                <li>Dificulty<span>{{ review.difficulty }}/5</span></li>
+                            </ul>
+                            <div class="rating">
+                                <h5><i>Rating</i><span>{{ review.rating }}</span> / 5</h5>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+                </div>
+        
+            </div>
+        </div>
+    </div>    
+</section>
+<!-- Games end-->
+
+<section class="game-author-section">
+    <div class="container">
+        <div class="game-author-pic set-bg" data-setbg="img/author.jpg"></div>
+        <div class="game-author-info">
+            <h4>Written by: Raishin</h4>
+            <p>Game is Life</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

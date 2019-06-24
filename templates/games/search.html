@@ -1,1 +1,120 @@
-<h1>search</h1>
+{% extends 'base.html' %}
+{% load humanize %}
+{% load static %}
+
+{% block title %}| Games {% endblock %}
+
+{% block content %}
+
+	<!-- Page top section -->
+	<section class="page-top-section set-bg" data-setbg="{% static 'img/page-top-bg/1.jpg' %}">
+		<div class="page-info">
+			<h2>Games</h2>
+			<div class="site-breadcrumb">
+				<a href="{% url 'index' %}">Home</a>  /
+				<a href="{% url 'games' %}"><span>Games</span></a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Page top end-->
+	<h1>{{ values.keywords }}</h1>
+
+
+	<!-- Games section -->
+	<section class="games-section">
+		<div class="container">
+			<ul class="game-filter">
+				 {% for key,value in alphabet.items %}
+				 <li><a href="{% url 'game_alpha' key %}">{{ value }}</a></li>
+				 {% endfor %}
+			</ul>
+			<div class="row">
+				<div class="col-xl-9 col-lg-8 col-md-7 game-single-content">
+					<div class="row">
+						{% if games %}
+							{% for game in games %}
+								<div class="col-lg-4 col-md-6">
+									<div class="game-item">
+										<img src="{{ game.photo_main.url }}" alt="#">
+										<h5>{{ game.title }}</h5>
+										<a href="{% url 'game' game.id %}" class="read-more">Read More  <img src="{% static 'img/icons/double-arrow.png' %}" alt="#"/></a>
+									</div>
+								</div>
+							{% endfor %}
+
+						{% else %}
+						<div class="col">
+							<p>No Games</p>
+						</div>
+						{% endif %}
+					</div>
+					<div class="row">
+							<div class="col-md-12">
+									{% if games.has_other_pages %}
+									<ul class="pagination">
+										{% if games.has_previous %}
+										<li class="page-item">
+										<a href="?page={{games.previous_page_number}}" class="page-link">&laquo;</a>
+										</li>
+										{% else %}
+										<li class="page-item disabled">
+										<a class="page-link">&laquo;</a>
+										</li>
+										{% endif %}
+										{% for i in games.paginator.page_range %}
+										{% if games.number == i %}
+										<li class="page-item active">
+											<a class="page-link">{{i}}</a>
+										</li>
+										{% else %}
+										<li class="page-item">
+											<a href="?page={{i}}" class="page-link">{{i}}</a>
+										</li>
+										{% endif %}
+										{% endfor %}
+										{% if games.has_next %}
+										<li class="page-item">
+										<a href="?page={{games.next_page_number}}" class="page-link">&raquo;</a>
+										</li>
+										{% else %}
+										<li class="page-item disabled">
+										<a class="page-link">&raquo;</a>
+										</li>
+										{% endif %}
+									</ul>
+									{% endif %}
+								</div>
+							</div>
+							
+					</div>
+				<div class="col-xl-3 col-lg-4 col-md-5 sidebar game-page-sideber">
+					<div id="stickySidebar">
+						<div class="widget-item">
+							<div class="categories-widget">
+								<h4 class="widget-title">platform</h4>
+								<ul>
+									{% for key,value in platform.items %}
+									<li><a href="{% url 'game_plat' key %}">{{ value }}</a></li>
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+						<div class="widget-item">
+							<div class="categories-widget">
+								<h4 class="widget-title">Genre</h4>
+								<ul>
+                                    {% for key,value in genre.items %}
+                                        <li><a href="{% url 'game_gen' key %}">{{ value }}</a></li>
+                                    {% endfor %}
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Games end-->
+
+{% endblock %}

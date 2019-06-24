@@ -29,12 +29,20 @@
                     <li><a href="{% url 'index' %}">Home</a></li>
                     <li><a href="{% url 'games' %}">Games</a>
                         <ul class="sub-menu">
-                            <li><a href="game-single.html">Game Singel</a></li>
+                                {% for key,value in genre.items %}
+                                <li><a href="{% url 'game_gen' key %}">{{ value }}</a></li>
+                                {% endfor %}
                         </ul>
                     </li>
                     <li><a href="{% url 'reviews'%}">Reviews</a></li>
                     <li><a href="{% url 'news' %}">News</a></li>
                     <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li>                    <form action="{% url 'search' %}">
+                        <input type="text" name="q" placeholder="Search"  >
+                        <input type="submit" value="Search"/>
+                    </form>
+                    </li>
+ 
                 </ul>
             </nav>
         </div>

@@ -36,7 +36,7 @@ h1 {
 
 h2 {
 	margin: 0;
-	color: #450d70;
+	color: #c0b6c9;
 	font-size: 36px;
 
 }
@@ -169,6 +169,20 @@ ol {
 	background: #fff;
 	position: relative;
 	z-index: 1;
+}
+.search-btn {
+	height: 38 px;
+	width: 40px;
+	font-size: 14px;
+	font-weight: 500;
+	font-style: italic;
+	min-width: 186px;
+	text-transform: uppercase;
+	color: #a9b0b8;
+	text-align: center;
+	background: rgb(66, 13, 116);
+	position: relative;
+
 }
 
 .site-btn img {
@@ -631,13 +645,13 @@ ol {
 
 .blog-section {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#501755+0,2d1854+100 */
-	background: #501755;
+	background: #49104e;
 	/* Old browsers */
 	/* FF3.6-15 */
-	background: -webkit-linear-gradient(45deg, #501755 0%, #2d1854 100%);
+	background: -webkit-linear-gradient(45deg, #49104e 0%, #2d1854 100%);
 	/* Chrome10-25,Safari5.1-6 */
-	background: -o-linear-gradient(45deg, #501755 0%, #2d1854 100%);
-	background: linear-gradient(45deg, #501755 0%, #2d1854 100%);
+	background: -o-linear-gradient(45deg,  #49104e 0%, #2d1854 100%);
+	background: linear-gradient(45deg,  #49104e 0%, #2d1854 100%);
 	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#501755', endColorstr='#2d1854', GradientType=1);
 	/* IE6-9 fallback on horizontal gradient */
@@ -900,22 +914,41 @@ ol {
 .featured-section {
 	position: relative;
 	overflow: hidden;
+	background: #4d0753;
+	/* Old browsers */
+	/* FF3.6-15 */
+	background: -webkit-linear-gradient(45deg, #4d0753 0%, #22048f 100%);
+	/* Chrome10-25,Safari5.1-6 */
+	background: -o-linear-gradient(45deg,  #4d0753 0%, #22048f 100%);
+	background: linear-gradient(45deg,  #4d0753 0%, #22048f 100%);
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#501755', endColorstr='#2d1854', GradientType=1);
+	
 }
 
 .featured-bg {
 	width: calc(50% - 156px);
 	float: left;
 	height: 100%;
-	left: 0;
-	right: 0;
+	margin: 10px 0 10px 10px;
 	position: absolute;
+	object-fit: contain;
 }
 
 .featured-box {
 	float: right;
 	width: calc(50% + 156px);
-	background: #fff;
 	padding: 100px 50px 130px 79px;
+	background: #49104e;
+	/* Old browsers */
+	/* FF3.6-15 */
+	background: -webkit-linear-gradient(45deg, #49104e 0%, #2d1854 100%);
+	/* Chrome10-25,Safari5.1-6 */
+	background: -o-linear-gradient(45deg,  #49104e 0%, #2d1854 100%);
+	background: linear-gradient(45deg,  #49104e 0%, #2d1854 100%);
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#501755', endColorstr='#2d1854', GradientType=1);
+	
 }
 
 .featured-box .text-box {
@@ -1124,7 +1157,7 @@ ol {
 
 .game-filter li {
 	display: inline-block;
-	width: 40px;
+	width: 30px;
 	height: 34px;
 	background: #503c6e;
 	border-radius: 17px;
@@ -1289,7 +1322,27 @@ ol {
 	line-height: 1.8;
 	margin-bottom: 70px;
 }
+.spec-widget{
+	background: #34164b;
+	padding: 55px 0 30px;
 
+}
+.spec-widget ul{
+	list-style: none;
+	padding: 0 38px;
+	margin-bottom: 30px;
+}
+.spec-widget ul li{
+	display: block;
+	font-size: 16px;
+	color: #b01ba5;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+.spec-widget ul li span{
+	color: #3159da;
+	
+}
 .rating-widget {
 	background: #34164b;
 	padding: 55px 0 30px;
@@ -1577,8 +1630,16 @@ ol {
 		margin-right: 0;
 		margin-bottom: 40px;
 	}
+	.search-form {
+		padding-left: 0;
+	}
+	.search-form input {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 40px;
+	}
 	.game-filter li {
-		width: 31px;
+		width: 36px;
 		height: 31px;
 	}
 	.game-filter li a {

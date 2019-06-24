@@ -4,14 +4,14 @@ from datetime import datetime
 
 class Games(models.Model):
     Platform_Choices=(
-        ('PC','PC'),
-        ('PS4','PS4'),
+        ('PC ','PC'),
+        ('PS4 ','PS4'),
         ('Xbox','Xbox'),
     )
     Genre_Choices=(
-        ('Action','Action'),('Adventure','Adventure'),('Anime','Anime'),('Racing','Racing'),('RPG','RPG'),
-        ('Simulation','Simulation'),('Sport','Sport'),('Strategy','Strategy'),('Survival','Survival'),('VR','VR'),
-        ('Horror','Horror'),('Shooter','Shooter'),('Puzzle','Puzzle'),('OpenWorld','OpenWorld'),('VisualNovel','VisualNovel'),
+        ('Action ','Action'),('Adventure ','Adventure'),('Anime ','Anime'),('Racing ','Racing'),('RPG ','RPG'),
+        ('Simulation ','Simulation'),('Sport ','Sport'),('Strategy ','Strategy'),('Survival ','Survival'),('VR ','VR'),
+        ('Horror ','Horror'),('Shooter ','Shooter'),('Puzzle ','Puzzle'),('OpenWorld ','OpenWorld'),('VisualNovel ','VisualNovel'),
     )
     title = models.CharField(max_length = 100)
     site_link = models.CharField(max_length = 100)
@@ -38,6 +38,7 @@ class Games(models.Model):
     screenshot3 = models.ImageField(upload_to= 'photos/%Y/%m/%d/',blank=True)
     screenshot4 = models.ImageField(upload_to= 'photos/%Y/%m/%d/',blank=True)
     screenshot5 = models.ImageField(upload_to= 'photos/%Y/%m/%d/',blank=True)
+    is_trending= models.BooleanField(default= False)
     def __str__(self):
         return self.title
 
